@@ -1,0 +1,7 @@
+﻿.chrome-profile*/
+.edge-profile*/
+desktop.png
+mobile.png
+.DS_Store
+Thumbs.db
+node_modules/

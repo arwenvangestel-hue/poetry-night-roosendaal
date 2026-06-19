@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Open Poetry Night Roosendaal</title>
+    <meta
+      name="description"
+      content="Meld je aan voor Open Poetry Night Roosendaal op vrijdag 9 oktober 2026. Poezie, spoken word, zang, rap en open mic."
+    >
+    <meta property="og:title" content="Open Poetry Night Roosendaal">
+    <meta property="og:description" content="Heb jij ergens een gedicht liggen? De wereld wil jouw woorden horen.">
+    <meta property="og:image" content="assets/open-poetry-night-flyer.png">
+    <meta name="theme-color" content="#061420">
+    <style>
+      :root {
+        --ink: #061420;
+        --ink-soft: #0b2230;
+        --paper: #f4e8d1;
+        --paper-muted: #d9c7a6;
+        --gold: #d89a31;
+        --gold-soft: #f2c66d;
+        --wine: #741b32;
+        --wine-deep: #351626;
+        --line: rgba(242, 198, 109, 0.38);
+        --shadow: rgba(0, 0, 0, 0.32);
+        --sans: "Segoe UI", Arial, sans-serif;
+        --serif: Georgia, "Times New Roman", serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        overflow-x: hidden;
+        color: var(--paper);
+        background:
+          linear-gradient(120deg, rgba(6, 20, 32, 0.98), rgba(8, 22, 31, 0.94) 48%, rgba(48, 18, 28, 0.78)),
+          url("assets/open-poetry-night-flyer.png") center / cover fixed;
+        font-family: var(--sans);
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        content: "";
+        background:
+          radial-gradient(circle at 78% 42%, rgba(216, 154, 49, 0.24), transparent 24rem),
+          linear-gradient(rgba(6, 20, 32, 0.9), rgba(6, 20, 32, 0.94));
+      }
+
+      a {
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .page {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 24px 0 12px;
+        color: var(--gold-soft);
+        font-family: var(--sans);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .nav {
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .nav a {
+        text-decoration: none;
+        opacity: 0.86;
+      }
+
+      .nav a:hover,
+      .nav a:focus-visible {
+        opacity: 1;
+        color: var(--paper);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.55fr);
+        gap: clamp(28px, 5vw, 68px);
+        align-items: center;
+        min-height: calc(100vh - 84px);
+        padding: clamp(28px, 7vw, 72px) 0;
+      }
+
+      .hero > *,
+      .section > * {
+        min-width: 0;
+      }
+
+      .eyebrow {
+        margin: 0 0 16px;
+        color: var(--gold);
+        font-family: var(--sans);
+        font-size: 0.95rem;
+        font-weight: 700;
+        letter-spacing: 0.17em;
+        line-height: 1.5;
+        text-transform: uppercase;
+        text-wrap: balance;
+      }
+
+      .eyebrow span + span::before,
+      .intro span + span::before {
+        content: " ";
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 9ch;
+        font-family: var(--serif);
+        font-size: 7.5rem;
+        line-height: 0.82;
+        text-transform: uppercase;
+        text-wrap: balance;
+        text-shadow: 0 14px 36px var(--shadow);
+      }
+
+      .title-night {
+        display: block;
+        color: var(--wine);
+      }
+
+      .script {
+        display: block;
+        margin-top: 12px;
+        color: var(--gold);
+        font-family: "Brush Script MT", "Segoe Script", cursive;
+        font-size: 5.35rem;
+        font-weight: 400;
+        line-height: 0.95;
+        text-transform: none;
+      }
+
+      .intro {
+        max-width: 680px;
+        margin: 26px 0 0;
+        color: var(--paper);
+        font-family: var(--sans);
+        font-size: 1.24rem;
+        line-height: 1.55;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 18px;
+        border: 1px solid var(--gold);
+        border-radius: 6px;
+        background: var(--gold);
+        color: #101015;
+        font-family: var(--sans);
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .button.secondary {
+        background: rgba(6, 20, 32, 0.2);
+        color: var(--gold-soft);
+      }
+
+      .poster-panel {
+        position: relative;
+      }
+
+      .poster-frame {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(242, 198, 109, 0.32);
+        border-radius: 8px;
+        background: rgba(3, 12, 20, 0.72);
+        box-shadow: 0 28px 70px rgba(0, 0, 0, 0.46);
+      }
+
+      .poster-frame img {
+        width: 100%;
+        aspect-ratio: 0.71;
+        object-fit: cover;
+      }
+
+      .info {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1px;
+        margin: 0 0 clamp(48px, 7vw, 82px);
+        border: 1px solid var(--line);
+        background: var(--line);
+      }
+
+      .info-card {
+        min-height: 178px;
+        padding: 24px;
+        background: rgba(4, 15, 25, 0.86);
+      }
+
+      .info-card span {
+        display: block;
+        color: var(--gold);
+        font-family: var(--sans);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .info-card strong {
+        display: block;
+        margin-top: 10px;
+        color: var(--paper);
+        font-size: 1.8rem;
+        line-height: 1.05;
+      }
+
+      .info-card p {
+        margin: 12px 0 0;
+        color: var(--paper-muted);
+        font-family: var(--sans);
+        font-size: 0.94rem;
+        line-height: 1.5;
+      }
+
+      .section {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.65fr);
+        gap: clamp(28px, 7vw, 86px);
+        align-items: start;
+        padding: 0 0 clamp(54px, 8vw, 92px);
+      }
+
+      .section h2 {
+        margin: 0;
+        color: var(--gold-soft);
+        font-family: var(--serif);
+        font-size: 4rem;
+        line-height: 0.96;
+        text-transform: uppercase;
+      }
+
+      .section p {
+        margin: 20px 0 0;
+        color: var(--paper);
+        font-family: var(--sans);
+        font-size: 1.1rem;
+        line-height: 1.7;
+      }
+
+      .badge {
+        display: grid;
+        min-height: 260px;
+        place-items: center;
+        padding: 34px;
+        border: 1px solid rgba(216, 154, 49, 0.6);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(116, 27, 50, 0.98), rgba(53, 22, 38, 0.9));
+        color: var(--paper);
+        text-align: center;
+      }
+
+      .badge strong {
+        display: block;
+        color: var(--paper);
+        font-family: var(--serif);
+        font-size: 1.8rem;
+        line-height: 1.25;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .badge span {
+        display: block;
+        margin-top: 18px;
+        color: var(--gold-soft);
+        font-family: var(--sans);
+        font-size: 0.95rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .footer-strip {
+        margin: 0 auto 34px;
+        padding: 22px 18px;
+        background: linear-gradient(90deg, transparent, rgba(53, 22, 38, 0.92) 12%, rgba(53, 22, 38, 0.92) 88%, transparent);
+        color: var(--paper);
+        font-family: var(--sans);
+        font-size: 1.1rem;
+        line-height: 1.7;
+        text-align: center;
+      }
+
+      .footer-strip strong {
+        color: var(--gold);
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 900px) {
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 14px;
+        }
+
+        .hero,
+        .section {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .hero {
+          min-height: auto;
+        }
+
+        h1 {
+          font-size: 6.2rem;
+        }
+
+        .script {
+          font-size: 4.6rem;
+        }
+
+        .section h2 {
+          font-size: 3.2rem;
+        }
+
+        .poster-panel {
+          width: min(520px, 100%);
+          margin: 0 auto;
+        }
+
+        .quote {
+          right: 14px;
+          top: 14px;
+          max-width: min(260px, calc(100% - 28px));
+        }
+
+        .info {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .badge {
+          width: min(320px, 100%);
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .page {
+          width: min(100%, 1120px);
+          padding-right: 11px;
+          padding-left: 11px;
+        }
+
+        .nav {
+          width: 100%;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          column-gap: 26px;
+          row-gap: 8px;
+          gap: 10px;
+          font-size: 0.72rem;
+          line-height: 1.5;
+        }
+
+        .eyebrow {
+          font-size: 0.78rem;
+          letter-spacing: 0.09em;
+          max-width: 100%;
+          overflow-wrap: anywhere;
+        }
+
+        .eyebrow span,
+        .intro span {
+          display: block;
+        }
+
+        .eyebrow span + span::before,
+        .intro span + span::before {
+          content: "";
+        }
+
+        h1 {
+          font-size: 4rem;
+          max-width: 100%;
+        }
+
+        .script {
+          font-size: 3.15rem;
+        }
+
+        .intro {
+          font-size: 1rem;
+          max-width: 100%;
+        }
+
+        .section h2 {
+          font-size: 2.4rem;
+        }
+
+        .hero-actions {
+          display: grid;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .info {
+          grid-template-columns: 1fr;
+        }
+
+        .info-card {
+          min-height: auto;
+        }
+
+        .footer-strip {
+          margin-bottom: 18px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        h1 {
+          font-size: 3.45rem;
+        }
+
+        .script {
+          font-size: 2.78rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page topbar" aria-label="Bovenbalk">
+      <div>Woorden. Verhalen. Jouw stem.</div>
+      <nav class="nav" aria-label="Navigatie">
+        <a href="#info">Info</a>
+        <a href="#meedoen">Aanmelden</a>
+        <a href="#locatie">Locatie</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page hero" aria-labelledby="titel">
+        <div>
+          <p class="eyebrow">
+            <span>Meld je aan voor poezie,</span>
+            <span>spoken word, zang of rap</span>
+          </p>
+          <h1 id="titel">
+            Open Poetry
+            <span class="title-night">Night</span>
+            <span class="script">Roosendaal</span>
+          </h1>
+          <p class="intro">
+            <span>Heb jij ergens een gedicht liggen?</span>
+            <span>De wereld wil jouw woorden horen.</span>
+            <span>Doe mee aan de eerste editie.</span>
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#meedoen">Meld je aan</a>
+            <a class="button secondary" href="#info">Praktische info</a>
+          </div>
+        </div>
+
+        <aside class="poster-panel" aria-label="Flyer Open Poetry Night Roosendaal">
+          <div class="poster-frame">
+            <img src="assets/open-poetry-night-flyer.png" alt="Flyer van Open Poetry Night Roosendaal">
+          </div>
+        </aside>
+      </section>
+
+      <section class="page info" id="info" aria-label="Praktische informatie">
+        <article class="info-card">
+          <span>Datum</span>
+          <strong>Vr 09 oktober 2026</strong>
+          <p>De eerste Open Poetry Night in Roosendaal.</p>
+        </article>
+        <article class="info-card">
+          <span>Tijd</span>
+          <strong>20.00 uur</strong>
+          <p>Inloop vanaf 19.30 uur. Einde rond 22.00 uur.</p>
+        </article>
+        <article class="info-card" id="locatie">
+          <span>Waar</span>
+          <strong>Roosendaal</strong>
+          <p>De exacte locatie wordt binnenkort bekendgemaakt.</p>
+        </article>
+        <article class="info-card">
+          <span>Plekken</span>
+          <strong>50 plekken</strong>
+          <p>Meld je op tijd aan. Vol is vol.</p>
+        </article>
+      </section>
+
+      <section class="page section" id="meedoen">
+        <div>
+          <h2>Jouw woorden op het podium?</h2>
+          <p>
+            Of je nu kiest voor spoken word, zingt, rapt of een gedicht voordraagt:
+            alles kan en mag. Iedere woordkunstenaar krijgt 10 minuten om werk te delen.
+          </p>
+          <p>
+            Kijk je liever eerst de kat uit de boom? Aansluitend is er kans om toch te
+            stralen bij de open mic. Aanmelden kan via: mailadres.
+          </p>
+        </div>
+
+        <aside class="badge" aria-label="Toegang">
+          <div>
+            <strong>Meld je aan</strong>
+            <span>Er zijn 50 plekken</span>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="page footer-strip">
+      We kijken uit naar een avond vol letterpret op het podium.<br>
+      <strong>Jouw stem. Jouw woorden. Open podium.</strong>
+    </footer>
+  </body>
+</html>
