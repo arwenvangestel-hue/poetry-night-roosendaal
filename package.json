@@ -2,7 +2,7 @@
   "name": "poetry-night-roosendaal",
   "private": true,
   "scripts": {
-    "build": "node scripts/check-quality.mjs",
+    "build": "node scripts/check-quality.mjs && node scripts/build-static.mjs",
     "check:quality": "node scripts/check-quality.mjs"
   }
 }
