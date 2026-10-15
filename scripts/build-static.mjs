@@ -1,8 +1,4 @@
-import fs from 'node:fs';
-fs.rmSync('public', { recursive: true, force: true });
-fs.mkdirSync('public');
-for (const entry of fs.readdirSync('.', {withFileTypes:true})) {
- if ((entry.isFile() && /\.(html|css|js|svg|png|jpe?g|webp|ico|xml|txt)$/i.test(entry.name) && !['config.example.js'].includes(entry.name)) || (entry.isDirectory() && entry.name === 'assets')) {
-   fs.cpSync(entry.name, `public/${entry.name}`, {recursive:true});
- }
-}
+import {mkdirSync,readdirSync,copyFileSync,cpSync} from 'node:fs';
+mkdirSync('public',{recursive:true});
+for(const file of readdirSync('.')) if(/\.(html|css|js|xml|txt|ico|png|jpe?g|webp|svg|avif)$/i.test(file)) copyFileSync(file,`public/${file}`);
+for(const dir of ['assets','images']) {try {cpSync(dir,`public/${dir}`,{recursive:true});} catch(error) {if(error.code!=='ENOENT') throw error;}}
