@@ -1,0 +1,12 @@
+{
+  "origin": "https://www.openpoetrynight.nl",
+  "output": ".",
+  "sitemap": "sitemap.xml",
+  "requireSchema": true,
+  "pages": [
+    {
+      "url": "/",
+      "file": "index.html"
+    }
+  ]
+}
