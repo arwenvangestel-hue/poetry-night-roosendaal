@@ -1,7 +1,9 @@
-# Poetry Middag Roosendaal
+# Open Poetry Roosendaal — terugblik eerste editie
 
-Statische onepager voor zondag 18 oktober 2026.
+Statische terugblik op de Poetry Middag van 18 oktober 2026 bij Museum Tongerlohuys – EKP.
 
-## Inschrijfformulier
+De aanmelding is gesloten: het formulier en de verzendcode zijn verwijderd, de publieke formulierconfiguratie is leeg en de Content Security Policy blokkeert formulierverzending en uitgaande verbindingen. De bestaande Zapier-registraties blijven bewaard.
 
-Het formulier verstuurt de gegevens via een JSON `POST`. De statische site leest de Catch Hook uit `config.js` als `window.POETRY_FORM_WEBHOOK_URL`. Bij statische hosting is deze formulierendpoint technisch zichtbaar voor bezoekers; Zapier-validatie en spamfilters blijven daarom belangrijk. `FORM_SUCCESS_REDIRECT` is optioneel gereserveerd voor een externe bedankpagina; standaard toont de pagina zelf de bevestiging.
+Acht geselecteerde foto’s staan als geoptimaliseerde WebP-bestanden in `assets/eerste-editie/`. De galerij ondersteunt vergroting, vorige/volgende, pijltjestoetsen en Escape. Zonder JavaScript openen de fotolinks het afbeeldingsbestand.
+
+`npm run build` controleert de SEO-basis en kopieert de publieke bestanden naar `public/`. Publicatie loopt via het bestaande Vercel-project en domein.

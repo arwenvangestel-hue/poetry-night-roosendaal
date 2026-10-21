@@ -1,2 +1,2 @@
-// Publieke formulierendpoint voor de statische website.
-window.POETRY_FORM_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/27914983/4h7keku/";
+// De eerste editie is afgelopen. Aanmelden is gesloten.
+window.POETRY_FORM_WEBHOOK_URL = null;
